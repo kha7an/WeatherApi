@@ -1,24 +1,39 @@
-# README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+```bash
+git clone https://github.com/kha7an/weatherApi
 
-* Ruby version
+cd weatherApi
 
-* System dependencies
+bundle install
+```
+```bash
+rails db:create
+rails db:migrate
+```
+```bash
+rails server
+```
+--------------------------------------------
 
-* Configuration
+```bash
+git clone https://github.com/kha7an/weatherApi
+cd weatherApi
+```
+```bash
+docker-compose build
+docker-compose up
+```
+Теперь приложение будет доступно по адресу http://localhost:3000.
 
-* Database creation
+## Использование API
 
-* Database initialization
+### Доступные эндпоинты
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- `GET /api/weather/current` - Получить текущую температуру.
+- `GET /api/weather/historical` - Получить температуру за последние 24 часа.
+- `GET /api/weather/historical/max` - Получить максимальную температуру за последние 24 часа.
+- `GET /api/weather/historical/min` - Получить минимальную температуру за последние 24 часа.
+- `GET /api/weather/historical/avg` - Получить среднюю температуру за последние 24 часа.
+- `GET /api/weather/by_time` - Найти температуру, ближайшую к переданному timestamp.
+- `GET /api/health` - Проверка статуса бекенда (возвращает `OK`).
